@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
 // import react
+import React from 'react';
 // import components
+import Header from './components/Header';
 // import & install axios npm package to handle API calls
+import axios from 'axios';
 
-
-function App() {
+class App extends React.Component {
   // Declare states
 
   // GET request to API
@@ -18,28 +19,16 @@ function App() {
   // Function to sort table results in descending order
 
   // Function to handle whether to call ascending or descending sort function
+  render(){
 
+    return (
+      // Replace this with what should actually be rendered
 
-  return (
-    // Replace this with what should actually be rendered
-
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="App">
+        <Header />
+      </div>
+    );
+  }
 }
 
 export default App;
