@@ -10,9 +10,9 @@ function Table(props){
     return (
         <div className='table-responsive'>
             <table className='table table-striped table-dark table-hover'>
-                <caption>List of employees</caption>
                 <thead>
                     <tr>
+                        <th category='col'>#</th>
                         <th category='col'>Name</th>
                         <th category='col'>Age</th>
                         <th category='col'>Country</th>
@@ -22,6 +22,12 @@ function Table(props){
                 </thead>
                 <tbody>
                     {/* Use map() to iterate over employees and render a TableRow component for each */}
+                    {props.employees.map((employee) => {
+                        {/* Create a TableRow component for ea employee */}
+                        {/* Using uid as a key (unique identifier) */}
+                        {/* Passing the whole employee object as props */}
+                        return <TableRow key={employee.login.uid} {...employee} />
+                    })}
                 </tbody>
             </table>
         </div>
