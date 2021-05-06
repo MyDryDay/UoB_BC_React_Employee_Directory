@@ -1,7 +1,7 @@
 // import react
 import React from 'react';
 // immport TableRow component
-
+import TableRow from './TableRow'
 // Create functional Table component
 function Table(props){
 // Function to sort the table 
