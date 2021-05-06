@@ -56,7 +56,7 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <br></br>
-        <Table />
+        <Table employees = {this.state.filteredList}/>
       </div>
     );
   }
