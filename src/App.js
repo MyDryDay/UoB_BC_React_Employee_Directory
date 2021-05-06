@@ -4,6 +4,7 @@ import './App.css';
 import React from 'react';
 // import components
 import Header from './components/Header';
+import Table from './components/Table';
 // import & install axios npm package to handle API calls
 import axios from 'axios';
 
@@ -54,6 +55,8 @@ class App extends React.Component {
 
       <div className="App">
         <Header />
+        <br></br>
+        <Table />
       </div>
     );
   }
