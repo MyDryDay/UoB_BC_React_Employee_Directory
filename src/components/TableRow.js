@@ -5,7 +5,7 @@ function TableRow(props){
     return (
         <tr>
             <td>
-                <img src={PaymentResponse.picture.thumbnail} alt="Employee picture"></img>
+                <img src={props.picture.thumbnail} alt="Employee"></img>
             </td>
             <td>{`${props.name.title} ${props.name.first} ${props.name.last}`} </td>
             <td>{props.dob.age}</td>
