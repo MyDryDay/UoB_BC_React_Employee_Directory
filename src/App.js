@@ -54,7 +54,7 @@ class App extends React.Component {
       // Replace this with what should actually be rendered
 
       <div className="App">
-        <Header />
+        <Header searchFunct = {this.search} />
         <br></br>
         <Table employees = {this.state.filteredList}/>
       </div>
