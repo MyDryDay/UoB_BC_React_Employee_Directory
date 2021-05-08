@@ -3,7 +3,7 @@ import React from 'react';
 // Create functional TableRow component
 function TableRow(props){
     return (
-        <tr>
+        <tr key={props.login.uid} {...props}>
             <td>
                 <img src={props.picture.thumbnail} alt="Employee"></img>
             </td>
