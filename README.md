@@ -1,7 +1,7 @@
 # React_Employee_Directory
 
   # Description
-  A simple ReactJS application used to display specific data from a list of randomly generated users.
+  A simple ReactJS application used to display specific data from a list of randomly generated users. The application can be found here: https://mydryday.github.io/UoB_BC_React_Employee_Directory/
 
   ## Contents
   Section                       | Description
@@ -14,6 +14,10 @@
   [Questions](#Questions)       | Contact Information For Those That Have Questions
 
   ## Screenshots
+  [Screenshot #1](/images/1.png)
+  [Screenshot #2](/images/2.png)
+  [Screenshot #3](/images/3.png)
+  [Screenshot #4](/images/4.png)
 
   ## Installation
   1. Download / Clone this repository. 
