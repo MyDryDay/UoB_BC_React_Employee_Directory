@@ -12,25 +12,25 @@ function Table(props){
 
 
     return (
-        <div className='table-responsive'>
-            <table className='table table-striped table-dark table-hover'>
+        <div className='table-responsive tableMarg'>
+            <table className='table table-striped table-hover'>
                 <thead>
                     <tr>
-                        <th category='col' onClick={sort}>#</th>
-                        <th category='col' onClick={sort}>Name</th>
-                        <th category='col' onClick={sort}>Age</th>
-                        <th category='col' onClick={sort}>Country</th>
-                        <th category='col' onClick={sort}>Email</th>
+                        <th className='tblHeading' category='col' onClick={sort}>#</th>
+                        <th className='tblHeading' category='col' onClick={sort}>Name</th>
+                        <th className='tblHeading' category='col' onClick={sort}>Age</th>
+                        <th className='tblHeading' category='col' onClick={sort}>Country</th>
+                        <th className='tblHeading' category='col' onClick={sort}>Email</th>
                         <th category='col' onClick={sort}>Phone Number</th>
                     </tr>
                 </thead>
                 <tbody>
                     {/* Use map() to iterate over employees and render a TableRow component for each */}
                     {props.employees.map((employee) => {
-                        {/* Create a TableRow component for ea employee */}
-                        {/* Using uid as a key (unique identifier) */}
-                        {/* Passing the whole employee object as props */}
-                        return <TableRow key={employee.login.uid} {...employee} />
+                        /* Create a TableRow component for ea employee */
+                        /* Using uid as a key (unique identifier) */
+                        /* Passing the whole employee object as props */
+                        return <TableRow key={employee.login.uuid} {...employee} />
                     })}
                 </tbody>
             </table>

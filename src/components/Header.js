@@ -5,8 +5,8 @@ import Search from './Search';
 // Navbar maybe?
 function Header(props){
     return (
-        <nav className='navbar navbar-dark bg-dark justify-content-left'>
-            <span className='navbar-brand mb-01 h1'>
+        <nav className='navbar navbar-dark bg-dark'>
+            <span className='navbar-brand mb-01 h1 left'>
                 React Employee Directory
             </span>
             <Search searchFunct={props.searchFunct} />

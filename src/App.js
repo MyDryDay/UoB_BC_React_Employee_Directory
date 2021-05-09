@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   // GET request to API for user data
-  async componentDidMount(){
+  componentDidMount(){
     // Set API URL to a variable
     let API = "https://randomuser.me/api/?results=25";
 
@@ -145,7 +145,6 @@ class App extends React.Component {
 
       <div className="App">
         <Header searchFunct = {this.search} />
-        <br></br>
         <Table employees = {this.state.filteredList} sortFunct = {this.sort}/>
       </div>
     );

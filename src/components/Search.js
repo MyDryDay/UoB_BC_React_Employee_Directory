@@ -15,7 +15,7 @@ function Search(props){
     }
 
     return (
-        <form className='d-flex'>
+        <form className='d-flex right'>
             <input className='form-control me-2' type='search' placeholder='Search...' aria-label='Search' onKeyUp={searchFunct}></input>
         </form>
     )
