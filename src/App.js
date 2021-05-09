@@ -62,7 +62,8 @@ class App extends React.Component {
       let personA = (a.name.first + a.name.last).toLowerCase();
       let personB = (b.name.first + b.name.last).toLowerCase();
       return personB.localeCompare(personA);
-    })
+    });
+    this.setState({filteredList: arr});
   }
 
   // Function to sort age in ascending order
@@ -71,7 +72,8 @@ class App extends React.Component {
       let personA = a.dob.age;
       let personB = b.dob.age;
       return personA - personB;
-    })
+    });
+    this.setState({filteredList: arr});
   }
 
   // Function to sort age in descending order
@@ -80,7 +82,28 @@ class App extends React.Component {
       let personA = a.dob.age;
       let personB = b.dob.age;
       return personB - personA;
-    })
+    });
+    this.setState({filteredList: arr});
+  }
+
+  // Function to sort country in ascending order
+  sortCountryAsc = (arr) => {
+    arr.sort((a, b) => {
+      let countryA = (a.location.country).toLowerCase();
+      let countryB = (b.location.country).toLowerCase();
+      return countryA.localeCompare(countryB);
+    });
+    this.setState({filteredList: arr});
+  }
+
+  // Function to sort country in descending order
+  sortCountryDesc = (arr) => {
+    arr.sort((a, b) => {
+      let countryA = (a.location.country).toLowerCase();
+      let countryB = (b.location.country).toLowerCase();
+      return countryB.localeCompare(countryA);
+    });
+    this.setState({filteredList: arr});
   }
 
   // Function to handle whether to call ascending or descending sort function
@@ -101,6 +124,15 @@ class App extends React.Component {
       }
       if(this.state.ascending === false){
         this.sortAgeDesc(this.state.filteredList);
+        this.setState({ascending: true});
+      }
+    } else if(header === 'Country'){
+      if(this.state.ascending === true){
+        this.sortCountryAsc(this.state.filteredList);
+        this.setState({ascending: false});
+      }
+      if(this.state.ascending === false){
+        this.sortCountryDesc(this.state.filteredList);
         this.setState({ascending: true});
       }
     }
