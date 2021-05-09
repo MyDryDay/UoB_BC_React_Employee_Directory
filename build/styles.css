@@ -1,0 +1,20 @@
+.left {
+    margin-left: 2%;
+}
+
+.right {
+    margin-right: 2%;
+}
+
+.tableMarg {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.tblHeading {
+    cursor: pointer;
+}
+
+.tblHeading:hover {
+    opacity: 0.7;
+}
