@@ -14,10 +14,10 @@
   [Questions](#Questions)       | Contact Information For Those That Have Questions
 
   ## Screenshots
-  [Screenshot #1](/images/1.png)
-  [Screenshot #2](/images/2.png)
-  [Screenshot #3](/images/3.png)
-  [Screenshot #4](/images/4.png)
+  ![Screenshot #1](/images/1.png)
+  ![Screenshot #2](/images/2.png)
+  ![Screenshot #3](/images/3.png)
+  ![Screenshot #4](/images/4.png)
 
   ## Installation
   1. Download / Clone this repository. 
