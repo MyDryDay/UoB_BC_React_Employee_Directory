@@ -50,7 +50,7 @@ class App extends React.Component {
       let personA = (a.name.first + a.name.last).toLowerCase();
       let personB = (b.name.first + b.name.last).toLowerCase();
       // localeCompare returns a number (1, 0, -1) depending on whether or not the string comes before, after or is equal
-      // to the compareString in sort order
+      // to the compareString in sort order. Also takes into account characters specific to the language set in the user's browser
       return personA.localeCompare(personB);
     });
     this.setState({filteredList: arr});
@@ -65,6 +65,24 @@ class App extends React.Component {
     })
   }
 
+  // Function to sort age in ascending order
+  sortAgeAsc = (arr) => {
+    arr.sort((a, b) => {
+      let personA = a.dob.age;
+      let personB = b.dob.age;
+      return personA - personB;
+    })
+  }
+
+  // Function to sort age in descending order
+  sortAgeDesc = (arr) => {
+    arr.sort((a, b) => {
+      let personA = a.dob.age;
+      let personB = b.dob.age;
+      return personB - personA;
+    })
+  }
+
   // Function to handle whether to call ascending or descending sort function
   sort = (header) => {
     if(header === 'Name' || header === 'Email'){
@@ -74,6 +92,15 @@ class App extends React.Component {
       }
       if(this.state.ascending === false){
         this.sortDesc(this.state.filteredList);
+        this.setState({ascending: true});
+      }
+    } else if(header === 'Age'){
+      if(this.state.ascending === true){
+        this.sortAgeAsc(this.state.filteredList);
+        this.setState({ascending: false});
+      }
+      if(this.state.ascending === false){
+        this.sortAgeDesc(this.state.filteredList);
         this.setState({ascending: true});
       }
     }
