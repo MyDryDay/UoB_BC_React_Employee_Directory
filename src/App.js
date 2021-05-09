@@ -67,7 +67,7 @@ class App extends React.Component {
 
   // Function to handle whether to call ascending or descending sort function
   sort = (header) => {
-    if(header === 'Name'){
+    if(header === 'Name' || header === 'Email'){
       if(this.state.ascending === true){
         this.sortAsc(this.state.filteredList);
         this.setState({ascending: false});
