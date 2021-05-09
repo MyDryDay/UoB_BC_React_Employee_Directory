@@ -12,7 +12,8 @@ class App extends React.Component {
   // Declare states
   state = {
     employees: {},
-    filteredList: []
+    filteredList: [],
+    ascending: true
   }
 
   // GET request to API for user data
@@ -43,11 +44,41 @@ class App extends React.Component {
     this.setState({filteredList: filtered});
   }
 
-  // Function to sort table results in ascending order
+  // Function to sort name & email in ascending order
+  sortAsc = (arr) => {
+    arr.sort((a, b) => {
+      let personA = (a.name.first + a.name.last).toLowerCase();
+      let personB = (b.name.first + b.name.last).toLowerCase();
+      // localeCompare returns a number (1, 0, -1) depending on whether or not the string comes before, after or is equal
+      // to the compareString in sort order
+      return personA.localeCompare(personB);
+    });
+    this.setState({filteredList: arr});
+  }
 
-  // Function to sort table results in descending order
+  // Function to sort name & email in descending order
+  sortDesc = (arr) => {
+    arr.sort((a, b) => {
+      let personA = (a.name.first + a.name.last).toLowerCase();
+      let personB = (b.name.first + b.name.last).toLowerCase();
+      return personB.localeCompare(personA);
+    })
+  }
 
   // Function to handle whether to call ascending or descending sort function
+  sort = (header) => {
+    if(header === 'Name'){
+      if(this.state.ascending === true){
+        this.sortAsc(this.state.filteredList);
+        this.setState({ascending: false});
+      }
+      if(this.state.ascending === false){
+        this.sortDesc(this.state.filteredList);
+        this.setState({ascending: true});
+      }
+    }
+  }
+
   render(){
 
     return (
@@ -56,7 +87,7 @@ class App extends React.Component {
       <div className="App">
         <Header searchFunct = {this.search} />
         <br></br>
-        <Table employees = {this.state.filteredList}/>
+        <Table employees = {this.state.filteredList} sortFunct = {this.sort}/>
       </div>
     );
   }

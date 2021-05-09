@@ -5,6 +5,10 @@ import TableRow from './TableRow'
 // Create functional Table component
 function Table(props){
 // Function to sort the table 
+    const sort = (e) => {
+        const header = e.target.textContent;
+        props.sortFunct(header);
+    }
 
 
     return (
@@ -12,12 +16,12 @@ function Table(props){
             <table className='table table-striped table-dark table-hover'>
                 <thead>
                     <tr>
-                        <th category='col'>#</th>
-                        <th category='col'>Name</th>
-                        <th category='col'>Age</th>
-                        <th category='col'>Country</th>
-                        <th category='col'>Email</th>
-                        <th category='col'>Phone Number</th>
+                        <th category='col' onClick={sort}>#</th>
+                        <th category='col' onClick={sort}>Name</th>
+                        <th category='col' onClick={sort}>Age</th>
+                        <th category='col' onClick={sort}>Country</th>
+                        <th category='col' onClick={sort}>Email</th>
+                        <th category='col' onClick={sort}>Phone Number</th>
                     </tr>
                 </thead>
                 <tbody>
